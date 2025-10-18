@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools>=68", "wheel", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "worklet"
+version = "0.1.0"
+description = "A high-performance distributed task framework for Python powered by Kafka."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Troy M Jose", email = "troymjose@gmail.com" }
+]
+keywords = ["worklet", "asyncio", "kafka", "distributed", "background", "queue"]
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries",
+]
+
+dependencies = ["confluent-kafka", "orjson", ]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "ruff",
+    "black",
+    "mkdocs",
+    "mkdocs-material",
+    "mkdocstrings[python]",
+    "sphinx",
+    "sphinx-autodoc-typehints",
+    "furo"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/troymjose/worklet"
+"Documentation" = "https://github.com/troymjose/worklet"
+"Issues" = "https://github.com/troymjose/worklet/issues"
+
+[tool.setuptools.packages.find]
+where = ["worklet"]
+
+[tool.black]
+line-length = 100
+
+[tool.ruff]
+select = ["E", "F", "I"]
+line-length = 100
+
+
+# 1️⃣ Clean old builds:
+# rm -rf dist/ build/
+#
+# 2️⃣ Build wheels (modern format):
+# python -m build
+#
+# 3️⃣ Test installation:
+# pip install dist/worklet-0.1.0-py3-none-any.whl
+#
+# 4️⃣ Verify:
+# python -c "import worklet; print(worklet.__version__)"
+# Upload:
+# twine upload dist/*
