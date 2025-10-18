@@ -1,4 +1,4 @@
-from worklet.executor.models import Task
+from src.worklet.executor.models import Task
 
 __all__ = ["ExecutorShutdownInProgressError",
            "ExecutorConfigurationError",

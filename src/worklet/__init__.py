@@ -1,11 +1,8 @@
+from src.worklet.portal.portal import Portal
+from src.worklet.portal.models import PortalConfig
 
-
-
-
-from .portal.portal import Portal
-from .portal.models import PortalConfig
-__version__ = "0.1.0"
-__all__ = ["Portal", "PortalConfig",]
+__version__ = "0.1.3"
+__all__ = ["Portal", "PortalConfig", ]
 
 import logging
 
@@ -118,4 +115,3 @@ logging.getLogger(__name__).addHandler(logging.NullHandler())
 # TODO: Should handle Gracefull Shutdown of KafkaProducer
 # TODO: Should ensure only one KafkaProducer instance per Portal
 # TODO: Should handle re-initialization of KafkaProducer on failure in Client machine
-    

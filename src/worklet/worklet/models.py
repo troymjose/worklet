@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import Any, Callable, TypeVar
 
-from worklet.executor.models import TaskRetry
+from src.worklet.executor.models import TaskRetry
 
 F = TypeVar("F", bound=Callable[..., Any])
 

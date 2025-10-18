@@ -1,8 +1,8 @@
 from typing import Type, Dict, Tuple, Optional
-from worklet.executor.models import ExecutorConfig
-from worklet.executor.base_executor import BaseExecutor
-from worklet.executor.exceptions import ExecutorNotFoundError
-from worklet.executor.async_executor import AsyncThreadExecutor
+from src.worklet.executor.models import ExecutorConfig
+from src.worklet.executor.base_executor import BaseExecutor
+from src.worklet.executor.exceptions import ExecutorNotFoundError
+from src.worklet.executor.async_executor import AsyncThreadExecutor
 
 __all__ = ["executor_factory"]
 

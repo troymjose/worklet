@@ -1,13 +1,13 @@
 from typing import Callable, TypeVar, Any, Optional
-from worklet.worker import runtime
-from worklet.utils.func import func_utils
-from worklet.worklet.worklet import Worklet
-from worklet.executor.models import TaskRetry
-from worklet.worklet.models import WorkletModel
-from worklet.worklet.registry import WorkletRegistry
-from worklet.portal.models import PortalConfig, PortalModel
-from worklet.utils.circuit_breaker import CircuitBreakerConfig
-from worklet.portal.teleporter import Teleporter, KafkaProducerConfig
+from src.worklet.worker import runtime
+from src.worklet.utils.func import func_utils
+from src.worklet.worklet.worklet import Worklet
+from src.worklet.executor.models import TaskRetry
+from src.worklet.worklet.models import WorkletModel
+from src.worklet.worklet.registry import WorkletRegistry
+from src.worklet.portal.models import PortalConfig, PortalModel
+from src.worklet.utils.circuit_breaker import CircuitBreakerConfig
+from src.worklet.portal.teleporter import Teleporter, KafkaProducerConfig
 
 F = TypeVar("F", bound=Callable[..., Any])
 

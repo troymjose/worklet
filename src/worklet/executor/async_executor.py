@@ -6,11 +6,11 @@ import logging
 import threading
 from weakref import WeakSet
 from concurrent.futures import Future
-from functools import lru_cache, partial
+from functools import partial
 from concurrent.futures import ThreadPoolExecutor
-from worklet.executor.base_executor import BaseExecutor
-from worklet.executor.models import ExecutorConfig, Task
-from worklet.executor.exceptions import ExecutorShutdownInProgressError, RetryError
+from src.worklet.executor.base_executor import BaseExecutor
+from src.worklet.executor.models import ExecutorConfig, Task
+from src.worklet.executor.exceptions import ExecutorShutdownInProgressError, RetryError
 
 __all__ = ["AsyncThreadExecutor", ]
 
@@ -48,8 +48,8 @@ class AsyncThreadExecutor(BaseExecutor):
             be interrupted.
 
     Usage Example:
-        >>> from worklet.executor.models import ExecutorConfig
-        >>> from worklet.models.task import Task
+        >>> from src.worklet import ExecutorConfig
+        >>> from src.worklet import Task
         >>> config = ExecutorConfig(concurrency=8, graceful_shutdown=True, shutdown_timeout_seconds=30)
         >>> executor = AsyncThreadExecutor(config=config)
         >>> async def my_coroutine(x, y):

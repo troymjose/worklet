@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "worklet"
-version = "0.1.0"
+version = "0.1.3"
 description = "A high-performance distributed task framework for Python powered by Kafka."
 readme = "README.md"
 requires-python = ">=3.9"
@@ -45,7 +45,13 @@ dev = [
 "Issues" = "https://github.com/troymjose/worklet/issues"
 
 [tool.setuptools.packages.find]
-where = ["worklet"]
+where = ["src"]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[project.scripts]
+worklet = "worklet.__main__:main"
 
 [tool.black]
 line-length = 100

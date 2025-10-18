@@ -1,7 +1,7 @@
 import logging
 from abc import ABC, abstractmethod
 from concurrent.futures import Future
-from worklet.executor.models import Task
+from src.worklet.executor.models import Task
 
 __all__ = ["BaseExecutor", ]
 

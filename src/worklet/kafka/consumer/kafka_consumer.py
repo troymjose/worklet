@@ -1,7 +1,7 @@
 import orjson
 import logging
 from confluent_kafka import Consumer, KafkaError, Message
-from worklet.kafka.consumer.models import ConsumerMessage, KafkaConsumerConfig
+from src.worklet.kafka.consumer.models import ConsumerMessage, KafkaConsumerConfig
 
 __all__ = ["KafkaConsumer", ]
 

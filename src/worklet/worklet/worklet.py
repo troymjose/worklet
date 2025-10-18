@@ -1,11 +1,10 @@
 import logging
-import inspect
 from functools import update_wrapper
 from typing import TypeVar, Callable, Any, Generic
-from worklet.worker import runtime
-from worklet.utils.func import func_utils
-from worklet.portal.teleporter import Teleporter
-from worklet.kafka.producer.models import KafkaProducerMessage, KafkaProducerMessageFunction
+from src.worklet.worker import runtime
+from src.worklet.utils.func import func_utils
+from src.worklet.portal.teleporter import Teleporter
+from src.worklet.kafka.producer.models import KafkaProducerMessage, KafkaProducerMessageFunction
 
 logger = logging.getLogger(__name__)
 
