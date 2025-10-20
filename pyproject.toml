@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "worklet"
-version = "0.1.4"
+version = "0.1.5"
 description = "A high-performance distributed task framework for Python powered by Kafka."
 readme = "README.md"
 requires-python = ">=3.9"
