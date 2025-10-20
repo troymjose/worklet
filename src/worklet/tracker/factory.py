@@ -1,7 +1,7 @@
 from typing import Dict, Type
-from src.worklet.tracker.base_tracker import Tracker
-from src.worklet.tracker.redis_tracker import RedisTracker
-from src.worklet.tracker.in_memory_tracker import InMemoryTracker
+from worklet.tracker.base_tracker import Tracker
+from worklet.tracker.redis_tracker import RedisTracker
+from worklet.tracker.in_memory_tracker import InMemoryTracker
 
 
 class TrackerFactory:

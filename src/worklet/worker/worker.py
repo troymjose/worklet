@@ -7,18 +7,18 @@ import logging
 import threading
 from queue import Queue
 from typing import Literal
-from src.worklet.worker import runtime
-from src.worklet.worker.errors import errors
+from worklet.worker import runtime
+from worklet.worker.errors import errors
 from confluent_kafka import TopicPartition
-from src.worklet.portal.models import PortalModel
-from src.worklet.worklet.models import WorkletModel
-from src.worklet.worklet.registry import WorkletRegistry
-from src.worklet.executor.factory import executor_factory
-from src.worklet.utils.autodiscovery import AutoDiscovery
-from src.worklet.kafka.consumer.kafka_consumer import KafkaConsumer
-from src.worklet.executor.models import ExecutorConfig, Task, TaskAction
-from src.worklet.worker.models import WorkerQueueConfig, WorkerKafkaConfig
-from src.worklet.kafka.consumer.models import ConsumerMessage, KafkaConsumerConfig
+from worklet.portal.models import PortalModel
+from worklet.worklet.models import WorkletModel
+from worklet.worklet.registry import WorkletRegistry
+from worklet.executor.factory import executor_factory
+from worklet.utils.autodiscovery import AutoDiscovery
+from worklet.kafka.consumer.kafka_consumer import KafkaConsumer
+from worklet.executor.models import ExecutorConfig, Task, TaskAction
+from worklet.worker.models import WorkerQueueConfig, WorkerKafkaConfig
+from worklet.kafka.consumer.models import ConsumerMessage, KafkaConsumerConfig
 
 logger = logging.getLogger(__name__)
 

@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from src.worklet.worker.models import ErrorModel
+from worklet.worker.models import ErrorModel
 
 
 @dataclass(frozen=True)

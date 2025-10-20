@@ -8,9 +8,9 @@ from weakref import WeakSet
 from concurrent.futures import Future
 from functools import partial
 from concurrent.futures import ThreadPoolExecutor
-from src.worklet.executor.base_executor import BaseExecutor
-from src.worklet.executor.models import ExecutorConfig, Task
-from src.worklet.executor.exceptions import ExecutorShutdownInProgressError, RetryError
+from worklet.executor.base_executor import BaseExecutor
+from worklet.executor.models import ExecutorConfig, Task
+from worklet.executor.exceptions import ExecutorShutdownInProgressError, RetryError
 
 __all__ = ["AsyncThreadExecutor", ]
 
@@ -46,17 +46,6 @@ class AsyncThreadExecutor(BaseExecutor):
             Gracefully shuts down the executor, optionally waiting for running tasks
             to complete. Already-started synchronous tasks in the thread pool cannot
             be interrupted.
-
-    Usage Example:
-        >>> from src.worklet import ExecutorConfig
-        >>> from src.worklet import Task
-        >>> config = ExecutorConfig(concurrency=8, graceful_shutdown=True, shutdown_timeout_seconds=30)
-        >>> executor = AsyncThreadExecutor(config=config)
-        >>> async def my_coroutine(x, y):
-        ...     return x + y
-        >>> task = Task(action=my_coroutine, args=(1, 2), kwargs={})
-        >>> future = executor.execute(task)
-        >>> result = await asyncio.wrap_future(future)
 
     Notes:
         - Async tasks are preferred and run directly in the event loop for maximum efficiency.

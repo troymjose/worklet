@@ -1,7 +1,7 @@
 import orjson
 import logging
 from confluent_kafka import Consumer, KafkaError, Message
-from src.worklet.kafka.consumer.models import ConsumerMessage, KafkaConsumerConfig
+from worklet.kafka.consumer.models import ConsumerMessage, KafkaConsumerConfig
 
 __all__ = ["KafkaConsumer", ]
 
@@ -38,7 +38,7 @@ class KafkaConsumer:
 
         consumer_init_config.update({"bootstrap.servers": config.bootstrap_servers,
                                      "group.id": config.consumer_group,
-                                     "auto.offset.reset": "earliest",
+                                     "auto.offset.reset": "latest",
                                      "enable.auto.commit": False, })
         if logger.isEnabledFor(logging.DEBUG):
             logger.debug(f"Kafka consumer overridden configurations: {consumer_init_config}")
@@ -104,7 +104,7 @@ class KafkaConsumer:
             try:
                 # orjson returns bytes->object; less overhead than json.loads
                 data = orjson.loads(raw)
-                data['func']['args']=tuple(data['func']['args'])
+                data['func']['args'] = tuple(data['func']['args'])
             except Exception as exc:
                 # avoid noisy logs in high-throughput flows; log once at WARN level with context
                 if logger.isEnabledFor(logging.WARNING):

@@ -1,7 +1,7 @@
 import logging
 from confluent_kafka import Producer
 from typing import TypeVar, Callable, Any
-from src.worklet.kafka.producer.models import KafkaProducerMessage, KafkaProducerConfig
+from worklet.kafka.producer.models import KafkaProducerMessage, KafkaProducerConfig
 
 __all__ = ["KafkaProducer", ]
 

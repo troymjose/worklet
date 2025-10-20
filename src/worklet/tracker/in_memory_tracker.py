@@ -1,8 +1,8 @@
 import logging
 import threading
 from typing import Dict
-from src.worklet.tracker.base_tracker import Tracker
-from src.worklet.kafka.producer.models import KafkaProducerMessage
+from worklet.tracker.base_tracker import Tracker
+from worklet.kafka.producer.models import KafkaProducerMessage
 
 logger = logging.getLogger(__name__)
 

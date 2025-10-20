@@ -1,8 +1,8 @@
 import logging
 from typing import TypeVar, Callable, Any, Dict, Iterator
-from src.worklet.worker import runtime
-from src.worklet.portal.models import PortalModel
-from src.worklet.worklet.models import WorkletModel
+from worklet.worker import runtime
+from worklet.portal.models import PortalModel
+from worklet.worklet.models import WorkletModel
 
 logger = logging.getLogger(__name__)
 
