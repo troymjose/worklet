@@ -50,6 +50,9 @@ where = ["src"]
 [tool.setuptools]
 package-dir = { "" = "src" }
 
+[tool.setuptools.package-data]
+"worklet" = ["py.typed"]
+
 [project.scripts]
 worklet = "worklet.__main__:main"
 

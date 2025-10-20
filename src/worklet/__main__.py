@@ -1,5 +1,7 @@
 import argparse
-from src.worklet.worker.worker import Worker, ExecutorConfig, WorkerQueueConfig
+from worklet.executor.models import ExecutorConfig
+from worklet.worker.models import WorkerQueueConfig
+from worklet.worker.worker import Worker
 
 
 def main():
