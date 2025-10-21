@@ -10,6 +10,12 @@ def main():
                         help="Name of the portal to connect to",
                         )
     parser.add_argument(
+        "--worklets",
+        type=str,
+        default="worklets",
+        help="Folder or module path containing worklet definitions [default: worklets]",
+    )
+    parser.add_argument(
         "--concurrency",
         type=int,
         default=1,
@@ -40,7 +46,10 @@ def main():
                                                         pause_threshold=args.task_pause_threshold,
                                                         resume_threshold=args.task_resume_threshold)
     executor_config: ExecutorConfig = ExecutorConfig(concurrency=args.concurrency)
-    worker = Worker(portal=args.portal, queue_config=queue_config, executor_config=executor_config, )
+    worker = Worker(portal=args.portal,
+                    worklets=args.worklets,
+                    queue_config=queue_config,
+                    executor_config=executor_config, )
     worker.start()
 
 

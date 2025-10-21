@@ -1,7 +1,7 @@
 from worklet.portal.portal import Portal
 from worklet.portal.models import PortalConfig
 
-__version__ = "0.1.6"
+__version__ = "0.1.7"
 __all__ = ["Portal", "PortalConfig", ]
 
 import logging
